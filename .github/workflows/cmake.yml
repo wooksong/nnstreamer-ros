@@ -43,6 +43,7 @@ jobs:
       # and build directories, but this is only available with CMake 3.13 and higher.  
       # The CMake binaries on the Github Actions machines are (as of this writing) 3.12
       run: |
+        source /opt/ros/melodic/setup.bash
         env | grep ROS
         cmake $GITHUB_WORKSPACE -DCMAKE_BUILD_TYPE=$BUILD_TYPE -DROS_VERSION=melodic
 
@@ -51,5 +52,6 @@ jobs:
       shell: bash
       # Execute the build.  You can specify a specific target with "--target <NAME>"
       run: |
+        source /opt/ros/melodic/setup.bash
         env | grep ROS
         cmake --build . --config $BUILD_TYPE  
