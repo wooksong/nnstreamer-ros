@@ -1,12 +1,12 @@
 dist: bionic
 before_script:
-  - sudo add-apt-repository ppa:nnstreamer/ppa
+  - sudo add-apt-repository ppa:nnstreamer/ppa -y
   - sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'
   - curl -sSL 'http://keyserver.ubuntu.com/pks/lookup?op=get&search=0xC1CF6E31E6BADE8868B172B4F42ED6FBAB17C654' | sudo apt-key add -
   - sudo apt-get -qq update
   - sudo apt-get -y install ros-melodic-ros-base nnstreamer-dev bsdmainutils libgstreamer1.0-dev \
     libgstreamer-plugins-base1.0-dev libglib2.0-dev gstreamer1.0-plugins-base gstreamer1.0-tools \
-    libgtest-dev ssat python2.7 nnstreamer-dev,
+    libgtest-dev ssat python2.7
 
 script:
   - source /opt/ros/melodic/setup.bash
