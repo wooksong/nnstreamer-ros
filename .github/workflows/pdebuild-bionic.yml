@@ -22,7 +22,7 @@ jobs:
       run:  |
         sudo apt-key adv --keyserver 'hkp://keyserver.ubuntu.com:80' --recv-key F42ED6FBAB17C654
         sudo apt-key adv --keyserver 'hkp://keyserver.ubuntu.com:80' --recv-key CADA0F77901522B3
-        sudo apt-key adv --keyserver 'hkp://keyserver.ubuntu.com:80' --recv-key F42ED6FBAB17C654
+        sudo apt-key adv --keyserver 'hkp://keyserver.ubuntu.com:80' --recv-key 3B4FE6ACC0B21F32
         sudo apt update
         sudo apt install pbuilder -y
         sudo pbuilder create --configfile .github/workflows/pbuilderrc-bionic.conf        
