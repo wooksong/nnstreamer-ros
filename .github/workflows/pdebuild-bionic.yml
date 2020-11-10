@@ -22,6 +22,8 @@ jobs:
       run:  |       
         sudo apt-key adv --keyserver 'hkp://keyserver.ubuntu.com:80' --recv-key F42ED6FBAB17C654
         sudo apt-key adv --keyserver 'hkp://keyserver.ubuntu.com:80' --recv-key CADA0F77901522B3
+        ls -al /etc/apt/trusted.gpg
+        ls -al /etc/apt/trusted.gpg.d
         sudo apt update
         sudo apt install debian-keyring ubuntu-keyring pbuilder -y
         sudo pbuilder create --configfile .github/workflows/pbuilderrc-bionic.conf        
