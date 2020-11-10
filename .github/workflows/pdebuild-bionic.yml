@@ -26,4 +26,5 @@ jobs:
         ls -al /etc/apt/trusted.gpg.d
         sudo apt update
         sudo apt install debian-keyring ubuntu-keyring pbuilder -y
-        sudo pbuilder create --configfile .github/workflows/pbuilderrc-bionic.conf        
+        cp .github/workflows/pbuilderrc-bionic.conf /home/runner/.pbuilderrc
+        sudo pbuilder create
