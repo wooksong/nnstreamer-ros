@@ -25,5 +25,6 @@ jobs:
         sudo apt-key adv --keyserver 'hkp://keyserver.ubuntu.com:80' --recv-key F42ED6FBAB17C654
         sudo apt-key adv --keyserver 'hkp://keyserver.ubuntu.com:80' --recv-key CADA0F77901522B3
         curl -s https://raw.githubusercontent.com/ros/rosdistro/master/ros.asc | sudo apt-key add -
+        ls -al /etc/apt/trusted.gpg.d
         cp .github/workflows/pbuilderrc-bionic.conf /home/runner/.pbuilderrc
         sudo pbuilder create
