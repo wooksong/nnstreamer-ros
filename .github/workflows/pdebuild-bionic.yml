@@ -18,7 +18,8 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: Create the build environment using pbuilder 
+    - name: Create the build environment using pbuilder
+      shell: bash
       run:  | 
         sudo apt update
         sudo apt install pbuilder curl devscripts -y
@@ -30,15 +31,7 @@ jobs:
         sudo apt install pbuilder curl debootstrap devscripts -y
         sudo pbuilder create
         echo "apt install -y lsb-release debian-keyring ubuntu-keyring curl gnupg2 debhelper cmake" \
-        > sudo pbuilder --login --save-after-exec        
-        echo "curl -s https://raw.githubusercontent.com/ros/rosdistro/master/ros.asc | sudo apt-key add -" \
-        > sudo pbuilder --login --save-after-exec 
-        echo "echo 'deb [arch=$(dpkg --print-architecture)] http://packages.ros.org/ros2/ubuntu $(lsb_release -cs) main > /etc/apt/sources.list.d/ros2-latest.list" \
         > sudo pbuilder --login --save-after-exec
-        echo "apt-key adv --keyserver 'hkp://keyserver.ubuntu.com:80' --recv-key C1CF6E31E6BADE8868B172B4F42ED6FBAB17C654" \
-        > sudo pbuilder --login --save-after-exec
-        echo "echo 'deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main' > /etc/apt/sources.list.d/ros-latest.list" \
-        > sudo pbuilder --login --save-after-exec
-        sudo pbuilder update
+        echo "dh --help" > sudo pbuilder --login --save-after-exec
         sudo pdebuild   
         
