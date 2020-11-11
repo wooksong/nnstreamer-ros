@@ -23,7 +23,7 @@ jobs:
         sudo apt update
         sudo apt install pbuilder curl -y
         sudo pbuilder create
-        echo "apt install -y lsb-release debootstrap devscripts debian-keyring ubuntu-keyring curl gnupg2" \
+        echo "apt install -y lsb-release debootstrap devscripts debian-keyring ubuntu-keyring curl gnupg2 cmake debhelper" \
         > sudo pbuilder --login --save-after-exec        
         echo "curl -s https://raw.githubusercontent.com/ros/rosdistro/master/ros.asc | sudo apt-key add -" \
         > sudo pbuilder --login --save-after-exec 
