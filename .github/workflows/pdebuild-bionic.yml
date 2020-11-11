@@ -33,7 +33,7 @@ jobs:
         > sudo pbuilder --login --save-after-exec
         echo "echo 'deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main' > /etc/apt/sources.list.d/ros-latest.list" \
         > sudo pbuilder --login --save-after-exec
-        echo "ls /etc/apt/sources.list.d/" > sudo pbuilder --login --save-after-exec
         sudo pbuilder update
+        sudo pdebuild
         
         
